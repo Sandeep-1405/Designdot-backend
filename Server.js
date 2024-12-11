@@ -8,7 +8,7 @@ const dotenv = require('dotenv').config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin:['https://designdot-frontend.vercel.app/', 'http://localhost:3001']
+    origin:['https://designdot-frontend.vercel.app', 'http://localhost:3001']
 }));
 
 connectToDb();
