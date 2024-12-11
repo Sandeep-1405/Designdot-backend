@@ -42,7 +42,7 @@ const userLogin = async (req, res) => {
         if (!isPasswordValid) {
             return res.status(401).json({ message: "Invalid password" });
         }
-        console.log(userDetails._id.toString())
+        //console.log(userDetails._id.toString())
         console.log("User logged in successfully");
 
         const jwtToken = jwt.sign({userId: userDetails._id.toString(), email }, process.env.JWT_SECRET || "JWT_SECRET");
