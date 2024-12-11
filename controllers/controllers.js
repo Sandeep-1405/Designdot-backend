@@ -23,8 +23,8 @@ const createUser = async (req, res) => {
 
         res.status(200).json({ message: "User registered successfully!" });
     } catch (error) {
-        console.log("error :", error.message);
-        res.status(500).json( error.message );
+        console.log(error.message);
+        return res.status(500).json({error: error.message});
     }
 };
 
@@ -49,8 +49,8 @@ const userLogin = async (req, res) => {
         
         return res.status(200).json({ message: "Login successful" , jwtToken});
     } catch (error) {
-        console.error(error.message);
-        return res.status(500).json({ message: "Internal server error :" + error.message });
+        console.log(error.message);
+        return res.status(500).json({error: error.message});
     }
 };
 
